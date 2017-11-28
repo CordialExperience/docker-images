@@ -9,8 +9,8 @@ RUN apk update \
     && chmod +x /usr/local/bin/kubectl \
     && apk del --purge .build-deps \
     && rm -rf /var/cache/apk/* \
-    && mkdir -p ~/.kube/config \
-    && mkdir -p ~/.aws/config \
+    && mkdir -p /root/.kube \
+    && mkdir -p /root/.aws \
     && kubectl version --client \
     && eb --version \
     && aws --version
