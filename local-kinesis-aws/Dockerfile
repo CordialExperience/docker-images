@@ -8,7 +8,7 @@ COPY ./docker-entrypoint.sh /usr/bin/docker-entrypoint.sh
 RUN apk update \
     && apk upgrade \
     && apk --no-cache add --virtual .build-deps make g++ \
-    && apk add -u py2-pip \
+    && apk add -u py2-pip coreutils \
     && pip2 install awscli \
     && mkdir -p $DATADIR \
     && yarn global add kinesalite \
